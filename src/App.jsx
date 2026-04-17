@@ -10,7 +10,7 @@ import { Toaster } from "react-hot-toast";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/keenkeeper-project">
       <Navbar />
       <Toaster position="top-center" />
       <Routes>
