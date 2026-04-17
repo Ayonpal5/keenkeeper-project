@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Alex Johnson",
+    "picture": "https://i.pravatar.cc/150?img=1",
+    "email": "alex.johnson@gmail.com",
+    "days_since_contact": 12,
+    "status": "overdue",
+    "tags": ["college", "close friend"],
+    "bio": "Met in university. Love hiking together and exploring new trails.",
+    "goal": 14,
+    "next_due_date": "2026-04-25"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Williams",
+    "picture": "https://i.pravatar.cc/150?img=2",
+    "email": "sarah.w@outlook.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["work", "mentor"],
+    "bio": "My senior at work. Always gives great career advice and guidance.",
+    "goal": 21,
+    "next_due_date": "2026-05-08"
+  },
+  {
+    "id": 3,
+    "name": "Michael Chen",
+    "picture": "https://i.pravatar.cc/150?img=3",
+    "email": "m.chen1995@gmail.com",
+    "days_since_contact": 28,
+    "status": "overdue",
+    "tags": ["university", "roommate"],
+    "bio": "Former roommate from college. Now lives in San Francisco working at a startup.",
+    "goal": 30,
+    "next_due_date": "2026-05-17"
+  },
+  {
+    "id": 4,
+    "name": "Emma Rodriguez",
+    "picture": "https://i.pravatar.cc/150?img=4",
+    "email": "emma.r@protonmail.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["gym buddy", "friend"],
+    "bio": "Met at the gym. We do CrossFit together on weekends.",
+    "goal": 10,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 5,
+    "name": "David Kim",
+    "picture": "https://i.pravatar.cc/150?img=5",
+    "email": "david.kim@company.com",
+    "days_since_contact": 18,
+    "status": "almost due",
+    "tags": ["work", "team lead"],
+    "bio": "My team lead at work. Great at providing feedback and support.",
+    "goal": 21,
+    "next_due_date": "2026-05-02"
+  },
+  {
+    "id": 6,
+    "name": "Jessica Thompson",
+    "picture": "https://i.pravatar.cc/150?img=6",
+    "email": "jthompson@gmail.com",
+    "days_since_contact": 8,
+    "status": "almost due",
+    "tags": ["college", "friend"],
+    "bio": "Best friend from high school. We still catch up monthly.",
+    "goal": 14,
+    "next_due_date": "2026-04-22"
+  },
+  {
+    "id": 7,
+    "name": "Robert Martinez",
+    "picture": "https://i.pravatar.cc/150?img=7",
+    "email": "rmartinez.dev@gmail.com",
+    "days_since_contact": 35,
+    "status": "overdue",
+    "tags": ["coding", "mentor"],
+    "bio": "Senior developer who mentored me. Always busy but great conversations.",
+    "goal": 30,
+    "next_due_date": "2026-05-17"
+  },
+  {
+    "id": 8,
+    "name": "Lisa Park",
+    "picture": "https://i.pravatar.cc/150?img=8",
+    "email": "lisa.park@email.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["book club", "friend"],
+    "bio": "Part of our monthly book club. Always has interesting perspectives.",
+    "goal": 14,
+    "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 9,
+    "name": "James Sullivan",
+    "picture": "https://i.pravatar.cc/150?img=9",
+    "email": "james.sullivan@outlook.com",
+    "days_since_contact": 21,
+    "status": "almost due",
+    "tags": ["sports", "friend"],
+    "bio": "Fellow soccer player. We practice together twice a week.",
+    "goal": 21,
+    "next_due_date": "2026-05-08"
+  },
+  {
+    "id": 10,
+    "name": "Michelle Brown",
+    "picture": "https://i.pravatar.cc/150?img=10",
+    "email": "m.brown@company.com",
+    "days_since_contact": 7,
+    "status": "almost due",
+    "tags": ["work", "friend"],
+    "bio": "Colleague in marketing. Great lunch partner and always fun to chat with.",
+    "goal": 14,
+    "next_due_date": "2026-04-21"
+  }
+]
