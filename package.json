@@ -9,7 +9,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext .js,.jsx",
-    "format": "prettier --write 'src/**/*.{js,jsx,css}'"
+    "format": "prettier --write 'src/**/*.{js,jsx,css}'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -23,7 +25,8 @@
     "@vitejs/plugin-react": "^4.2.1",
     "tailwindcss": "^3.4.0",
     "postcss": "^8.4.0",
-    "autoprefixer": "^10.4.0"
+    "autoprefixer": "^10.4.0",
+    "gh-pages": "^5.0.0"
   },
   "keywords": [
     "friends",
