@@ -9,12 +9,12 @@ const navItems = [
 export default function Navbar() {
   const activeStyle = ({ isActive }) => 
     isActive 
-      ? "text-green-700 font-bold flex items-center gap-1 border-b-2 border-green-700 pb-1" 
-      : "text-gray-600 flex items-center gap-1 hover:text-green-600 transition";
+      ? "text-green-700 font-bold flex items-center gap-1 border-b-2 border-green-700 pb-1 transition-colors duration-300" 
+      : "text-gray-600 flex items-center gap-1 hover:text-green-600 transition-colors duration-300";
 
   return (
-    <nav className="flex justify-between items-center px-6 py-4 bg-white shadow-md sticky top-0 z-50">
-      <div className="flex items-center gap-2">
+    <nav className="flex justify-between items-center px-6 py-4 bg-white shadow-md sticky top-0 z-50 border-b border-gray-200">
+      <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition">
         <span className="text-2xl">🤝</span>
         <h1 className="text-2xl font-bold text-green-700">KeenKeeper</h1>
       </div>
@@ -25,8 +25,8 @@ export default function Navbar() {
             to={item.path} 
             className={navItems => activeStyle(navItems)}
           >
-            <span>{item.icon}</span>
-            <span>{item.label}</span>
+            <span className="text-lg">{item.icon}</span>
+            <span className="hidden sm:inline">{item.label}</span>
           </NavLink>
         ))}
       </div>
