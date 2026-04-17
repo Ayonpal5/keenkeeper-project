@@ -15,7 +15,7 @@ export default function FriendDetails() {
 
   if (!friend) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center">
+      <div className="min-h-[60vh] flex flex-col items-center justify-center px-4">
         <p className="text-xl text-gray-600 mb-4">Friend not found</p>
         <button 
           onClick={() => nav("/")}
@@ -40,14 +40,8 @@ export default function FriendDetails() {
     toast.success(`${type} logged! Added to timeline.`);
   };
 
-  const icons = {
-    Call: "📞",
-    Text: "💬",
-    Video: "📹"
-  };
-
   return (
-    <main className="min-h-screen bg-gray-50 py-8 px-4">
+    <main className="min-h-screen bg-gray-50 py-6 md:py-8 px-4">
       <div className="max-w-6xl mx-auto">
         <button 
           onClick={() => nav("/")}
@@ -63,7 +57,7 @@ export default function FriendDetails() {
               <img 
                 src={friend.picture} 
                 alt={friend.name}
-                className="w-40 h-40 rounded-full mx-auto mb-4 object-cover"
+                className="w-40 h-40 rounded-full mx-auto mb-4 object-cover border-4 border-green-200"
               />
               <h1 className="text-2xl font-bold text-center mb-2">{friend.name}</h1>
               
@@ -88,13 +82,15 @@ export default function FriendDetails() {
               {/* Bio */}
               <div className="mb-6">
                 <p className="text-sm text-gray-600 font-semibold mb-2">Bio</p>
-                <p className="text-gray-700">{friend.bio}</p>
+                <p className="text-gray-700 text-sm leading-relaxed">{friend.bio}</p>
               </div>
 
               {/* Email */}
               <div className="mb-6">
                 <p className="text-sm text-gray-600 font-semibold mb-2">Email</p>
-                <p className="text-blue-600 break-words">{friend.email}</p>
+                <a href={`mailto:${friend.email}`} className="text-blue-600 break-words hover:underline">
+                  {friend.email}
+                </a>
               </div>
 
               {/* Action Buttons */}
@@ -115,35 +111,35 @@ export default function FriendDetails() {
           {/* Right Column */}
           <div className="lg:col-span-2 space-y-6">
             {/* Stats Cards */}
-            <div className="grid grid-cols-3 gap-4">
-              <div className="bg-white rounded-lg shadow p-4 text-center">
-                <p className="text-3xl font-bold text-gray-800">{friend.days_since_contact}</p>
-                <p className="text-sm text-gray-600 mt-2">Days Since Contact</p>
+            <div className="grid grid-cols-3 gap-3 md:gap-4">
+              <div className="bg-white rounded-lg shadow p-4 text-center hover:shadow-lg transition">
+                <p className="text-2xl md:text-3xl font-bold text-gray-800">{friend.days_since_contact}</p>
+                <p className="text-xs md:text-sm text-gray-600 mt-2">Days Since Contact</p>
               </div>
-              <div className="bg-white rounded-lg shadow p-4 text-center">
-                <p className="text-3xl font-bold text-gray-800">{friend.goal}</p>
-                <p className="text-sm text-gray-600 mt-2">Goal (days)</p>
+              <div className="bg-white rounded-lg shadow p-4 text-center hover:shadow-lg transition">
+                <p className="text-2xl md:text-3xl font-bold text-gray-800">{friend.goal}</p>
+                <p className="text-xs md:text-sm text-gray-600 mt-2">Goal (days)</p>
               </div>
-              <div className="bg-white rounded-lg shadow p-4 text-center">
-                <p className="text-sm text-gray-600 mb-2">Next Due Date</p>
-                <p className="text-lg font-bold text-gray-800">{new Date(friend.next_due_date).toLocaleDateString()}</p>
+              <div className="bg-white rounded-lg shadow p-4 text-center hover:shadow-lg transition">
+                <p className="text-xs md:text-sm text-gray-600 mb-2">Next Due</p>
+                <p className="text-lg md:text-xl font-bold text-gray-800">{new Date(friend.next_due_date).toLocaleDateString()}</p>
               </div>
             </div>
 
             {/* Relationship Goal Card */}
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <div className="flex justify-between items-center mb-4">
+              <div className="flex justify-between items-center mb-4 flex-wrap gap-2">
                 <h3 className="text-xl font-bold">Relationship Goal</h3>
                 <button className="text-green-600 hover:text-green-700 font-semibold">✏️ Edit</button>
               </div>
               <div className="space-y-3">
                 <p className="text-gray-700">
-                  Contact <span className="font-bold">{friend.name}</span> every <span className="font-bold">{friend.goal} days</span>
+                  Contact <span className="font-bold">{friend.name}</span> every <span className="font-bold text-green-600">{friend.goal} days</span>
                 </p>
-                <div className="w-full bg-gray-200 rounded-full h-3">
+                <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                   <div 
-                    className="bg-green-600 h-3 rounded-full" 
-                    style={{ width: `${Math.min(100, (friend.goal - friend.days_since_contact) / friend.goal * 100)}%` }}
+                    className="bg-gradient-to-r from-green-500 to-green-600 h-3 rounded-full transition-all duration-500" 
+                    style={{ width: `${Math.min(100, Math.max(0, (friend.goal - friend.days_since_contact) / friend.goal * 100))}%` }}
                   ></div>
                 </div>
                 <p className="text-sm text-gray-600">
@@ -159,24 +155,24 @@ export default function FriendDetails() {
               <div className="grid grid-cols-3 gap-3">
                 <button 
                   onClick={() => addInteraction("Call")}
-                  className="bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold flex flex-col items-center gap-2 transition"
+                  className="bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold flex flex-col items-center gap-2 transition shadow hover:shadow-lg"
                 >
                   <span className="text-2xl">📞</span>
-                  <span>Call</span>
+                  <span className="text-sm">Call</span>
                 </button>
                 <button 
                   onClick={() => addInteraction("Text")}
-                  className="bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold flex flex-col items-center gap-2 transition"
+                  className="bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold flex flex-col items-center gap-2 transition shadow hover:shadow-lg"
                 >
                   <span className="text-2xl">💬</span>
-                  <span>Text</span>
+                  <span className="text-sm">Text</span>
                 </button>
                 <button 
                   onClick={() => addInteraction("Video")}
-                  className="bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-semibold flex flex-col items-center gap-2 transition"
+                  className="bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-semibold flex flex-col items-center gap-2 transition shadow hover:shadow-lg"
                 >
                   <span className="text-2xl">📹</span>
-                  <span>Video</span>
+                  <span className="text-sm">Video</span>
                 </button>
               </div>
             </div>
